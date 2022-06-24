@@ -1,16 +1,12 @@
 
 import 'dart:convert';
 import 'dart:io';
-import 'dart:typed_data';
-import 'package:flutter/widgets.dart';
 import 'package:http_parser/http_parser.dart';
 import 'package:flutter_application/models/apartment_model.dart';
 import 'package:flutter_application/models/user_details_model.dart';
 import 'package:flutter_application/models/visitor_details_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:path/path.dart';
-import 'package:path_provider/path_provider.dart';
-
 import 'models/notice_model.dart';
 
 

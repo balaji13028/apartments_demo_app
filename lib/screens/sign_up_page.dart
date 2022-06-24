@@ -1,8 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application/api_url.dart';
 import 'package:flutter_application/screens/login_screen.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 // ignore: use_key_in_widget_constructors
 class SignUpPage extends StatefulWidget {
@@ -26,8 +24,17 @@ class _SignUpPageState extends State<SignUpPage> {
   // ignore: unused_field
   String _number = '';
 
+ void _trySubmitForm(BuildContext context) {
+    final bool? isValid = _formKey.currentState?.validate();
+    if (isValid == true) {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const LoginScreen(),
+          ));
+    }
+  }
 
- SignUpPage createState() => SignUpPage();
 
   @override
   Widget build(BuildContext context) {
@@ -214,38 +221,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       child: TextButton(
                         onPressed: () async {
 
-                          String value = await Signup(_userName, _userEmail,_number);                       
-                            if(value == 'true'){
-                              final bool? isValid = _formKey.currentState?.validate();                          
-                              if (isValid == true) {
-                                EasyLoading.showSuccess(
-                                  "Successfully registered",
-                                  duration: const Duration(milliseconds: 1200),
-                                  dismissOnTap: true
-                                );
-                                Navigator.push(context,MaterialPageRoute(builder: (context) => const LoginScreen(),
-                               ));
-                              }
-                            } else if(value=="email is existed") {
-                              _formKey.currentState?.validate();
-                              EasyLoading.showToast('This Email is already used',
-                                  toastPosition:
-                                      EasyLoadingToastPosition.bottom,
-                                );
-                            }else if (value=="number is existed"){
-                              _formKey.currentState?.validate();
-                              EasyLoading.showToast('This mobile number is already used',
-                                  toastPosition:
-                                      EasyLoadingToastPosition.bottom,
-                                );
-                            }else{
-                              _formKey.currentState?.validate();
-                              EasyLoading.showToast('Please enter the details',
-                                  toastPosition:
-                                      EasyLoadingToastPosition.bottom,
-                                );
-                            }
-
+                          
                           },
                          style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(6),),),
@@ -319,7 +295,7 @@ class _SignUpPageState extends State<SignUpPage> {
                       width: double.infinity,
                       child: TextButton(
                         onPressed:() {                         
-                                                                                                                                                                                 
+                                 _trySubmitForm(context);                                                                                                                                                
                           },
                          style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(6),),),

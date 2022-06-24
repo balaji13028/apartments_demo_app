@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application/screens/sign_up_page.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import '../api_url.dart';
 import 'home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -232,11 +231,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       Container(
                         child: TextButton(
                           onPressed: () async {
-                          await flatResponse();
-                          await noticesResponse();
-                          await visitorsResponse();
-                          await usersResponse(); 
-                            Navigator.push(
+                             Navigator.push(
                                      context,
                                     MaterialPageRoute(
                                        builder: (context) => const HomeScreen(),

@@ -4,7 +4,6 @@
 // ignore: prefer_typing_uninitialized_variables
 import 'package:flutter/material.dart';
 
-var fido;
 class VisitorData{
   String?  visitorName,typeOfVisitor,visitorImage,inTime,inDate,outDate,id,visitorNumber,expectedDuration,outTime,timeElapsed;
   Image? imagefile;

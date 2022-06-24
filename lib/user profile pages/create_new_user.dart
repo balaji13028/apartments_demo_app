@@ -442,7 +442,7 @@ class _NewUserState extends State<NewUser> {
                           onChanged: (value) => _flatNo = value,
                           ),
                           const SizedBox(height: 12,),
-                        Container(
+                        SizedBox(
                            child: 
                Column(
           

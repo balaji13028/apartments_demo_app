@@ -420,7 +420,7 @@ void  galleryphoto(source) async {
                           onChanged: (value) => _ventureName = value,
                           ),
                         const SizedBox(height: 12,),
-                        Container(
+                        SizedBox(
                            child: 
                Column(
           

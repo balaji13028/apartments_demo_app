@@ -22,7 +22,6 @@ class _ViewVisitorProfileState extends State<ViewVisitorProfile> {
   
  // ignore: prefer_typing_uninitialized_variables
  var intime;
- var decodeBytes;
  String _timeasString = DateTime.now().toString();
 
 Timer ?_timer;
@@ -31,13 +30,13 @@ String outdater='';
 
 @override 
 void initState() {
- decodeBytes = base64Decode(widget.visitor.visitorImage!);
+
 
 
   var stringdateandtime= ('${widget.visitor.inDate!} ${widget.visitor.inTime!}');
   /* now convert date and time string to datetime format */
   intime=DateTime.parse(stringdateandtime);
-  print('time 2 is $intime');
+  //print('time 2 is $intime');
 
   _timeasString = DateFormat("kk:mm:ss").format(intime);
    
@@ -64,7 +63,7 @@ void initState() {
 
   @override
   Widget build(BuildContext context) {
-
+var decodeBytes = base64Decode(widget.visitor.visitorImage!);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Visitor Profile'),      
@@ -347,7 +346,7 @@ void initState() {
                       ),
                     ), 
                    const  SizedBox(height: 30,),
-                    Container(
+                    SizedBox(
                       height: 38,
                       width: 140,
                       child: ElevatedButton(                                        

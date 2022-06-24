@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'dart:convert';
 import 'dart:io';
 import 'package:flutter/material.dart';
@@ -69,6 +71,7 @@ void initState() {
         return false;
       },
       child: Scaffold(
+        drawerEnableOpenDragGesture: false,
         key: slidebar, 
         appBar: AppBar(      
           leading: IconButton(
@@ -185,12 +188,12 @@ void initState() {
             decoration: const BoxDecoration(
           color: Color.fromRGBO(39, 105, 170, 1), 
              ),            
-               accountName: Text((userList == null)? '${details[0].firstName}' : userList[0].firstName!),
-               accountEmail: Text((userList == null)? '${details[0].number}' : userList[0].number!),
+               accountName: Text((userList.isEmpty)? '${details[0].firstName}' : userList[0].firstName!),
+               accountEmail: Text((userList.isEmpty)? '${details[0].number}' : userList[0].number!),
                currentAccountPicture: CircleAvatar(
                  backgroundColor: Colors.grey,            
                 child: ClipOval(                                                     
-                            child:( userList == null)
+                            child:( userList.isEmpty)
                             ? Image.asset(details[0].image!,fit: BoxFit.cover,height: size.height*0.215,width: size.width*0.378,)
                             : Image.memory(base64Decode(userList[0].image!),fit:BoxFit.cover, height: size.height*0.215,width: size.width*0.4                                                                         
                           ),

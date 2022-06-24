@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_application/models/user_details_model.dart';
 
@@ -39,7 +38,7 @@ class ProfileDetails extends StatelessWidget {
                     radius: 32.0,
                     backgroundColor:const Color.fromRGBO(39, 105, 170, 1),
                      child:ClipOval(
-                                child:( decodeBytes== null )
+                                child:( decodeBytes.isEmpty )
                           ? Image.asset('assets/images/person.jpg')
                           : Image.memory(decodeBytes,fit: BoxFit.cover,width: size.width*0.178,                                                                        
                         ),

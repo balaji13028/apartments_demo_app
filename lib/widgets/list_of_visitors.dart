@@ -18,7 +18,7 @@ class ListOfVisitors extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   
-      print('list of visitors ${details.length}');     
+     // print('list of visitors ${details.length}');     
     return Card(      
      margin:const EdgeInsets.symmetric(horizontal: 14.0,vertical: 6,),
       elevation:8.0,
