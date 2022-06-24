@@ -4,6 +4,9 @@ import 'package:flutter_application/api_url.dart';
 import 'package:flutter_application/models/visitor_details_model.dart';
 import 'package:flutter_application/screens/home_screen.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:intl/intl.dart';
+
+import '../local_database.dart';
 
 
 
@@ -441,26 +444,26 @@ void initState() {
                                   if(
                                   _formKey.currentState!.validate()){
                                   _formKey.currentState!.save();
-                                  // newVisitor.inDate= DateFormat('yyyy-MM-dd').format(DateTime.now()).toString();
-                                  //  newVisitor.inTime= DateFormat('kk:mm:ss').format(DateTime.now()).toString();
-                                  //   newVisitor.outDate= '----/--/--';
-                                  //    newVisitor.outTime= '--:--:--';
-                                  //    newVisitor.typeOfVisitor = visitorType;
-                                  //    newVisitor.expectedDuration = durationtime;
-                                  //    newVisitor.timeElapsed="null";
-                                  //    newVisitor.visitorImage=imagepath;
-                                  //    insertVisitor(newVisitor);
-                                  //    visit();  
-                                  visitorApi(
-                                    namecontroller.text,
-                                    numbercontroller.text, 
-                                    visitorType, 
-                                    flatcontroller.text,
-                                     _controller.text,
-                                     "--:--:--",
-                                     "--/--/----",
-                                     "null",
-                                     widget.img,);  
+                                  newVisitor.inDate= DateFormat('yyyy-MM-dd').format(DateTime.now()).toString();
+                                   newVisitor.inTime= DateFormat('kk:mm:ss').format(DateTime.now()).toString();
+                                    newVisitor.outDate= '----/--/--';
+                                     newVisitor.outTime= '--:--:--';
+                                     newVisitor.typeOfVisitor = visitorType;
+                                     newVisitor.expectedDuration = durationtime;
+                                     newVisitor.timeElapsed="null";
+                                     newVisitor.visitorImage=imagepath;
+                                     insertVisitor(newVisitor);
+                                     visit();  
+                                  // visitorApi(
+                                  //   namecontroller.text,
+                                  //   numbercontroller.text, 
+                                  //   visitorType, 
+                                  //   flatcontroller.text,
+                                  //    _controller.text,
+                                  //    "--:--:--",
+                                  //    "--/--/----",
+                                  //    "null",
+                                  //    widget.img,);  
                                             
                                 Navigator.push(                                  
                                        context, MaterialPageRoute(builder: (context) => const HomeScreen()));                                                                                                                
