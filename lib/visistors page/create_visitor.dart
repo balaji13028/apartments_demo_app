@@ -1,11 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_application/api_url.dart';
 import 'package:flutter_application/models/visitor_details_model.dart';
 import 'package:flutter_application/screens/home_screen.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:intl/intl.dart';
-
 import '../local_database.dart';
 
 

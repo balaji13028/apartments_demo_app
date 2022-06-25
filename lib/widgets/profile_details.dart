@@ -42,10 +42,8 @@ class ProfileDetails extends StatelessWidget {
                           ? Image.asset('assets/images/person.jpg')
                           : Image.memory(decodeBytes,fit: BoxFit.cover,width: size.width*0.178,                                                                        
                         ),
-                                 
-                                 
-                               ),   
-                   ),               
+                     ), 
+                   ), 
                    SizedBox(width: size.width*0.04,),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
